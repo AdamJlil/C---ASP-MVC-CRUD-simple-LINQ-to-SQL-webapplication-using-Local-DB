@@ -1,0 +1,424 @@
+﻿@model IEnumerable<WebApplication1.plg_horaire>
+@{
+    ViewBag.Title = "plg";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Meta tags -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+    <!-- Chrome, Firefox OS and Opera mobile address bar theming -->
+    <meta name="theme-color" content="#000000">
+    <!-- Windows Phone mobile address bar theming -->
+    <meta name="msapplication-navbutton-color" content="#000000">
+    <!-- iOS Safari mobile address bar theming -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+
+    <!-- SEO -->
+    <meta name="description" content="Halfmoon is a responsive front-end framework that is great for building dashboards and tools. Built-in dark mode, full customizability using CSS variables (around 1,500 variables), optional JavaScript library (no jQuery), Bootstrap like classes, and cross-browser compatibility (including IE11).">
+    <meta name="author" content="Halfmoon">
+    <meta name="keywords" content="Halfmoon, HTML, CSS, JavaScript, CSS Framework, dark mode, dark-mode, darkmode, dark theme, dark-theme, darktheme, Bootstrap, Foundation, Bulma, dashboard, UI, UI framework, user interface, design, design system">
+
+    <!-- Open graph -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://www.gethalfmoon.com/page-sections-demo/?sidebar-type=overlayed-sm-and-down&amp;show-alert=yes">
+    <meta property="og:title" content="Front-end framework with a built-in dark mode and full customizability using CSS variables; great for building dashboards and tools">
+    <meta property="og:description" content="Halfmoon is a responsive front-end framework that is great for building dashboards and tools. Built-in dark mode, full customizability using CSS variables (around 1,500 variables), optional JavaScript library (no jQuery), Bootstrap like classes, and cross-browser compatibility (including IE11).">
+    <meta property="og:image" content="https://res.cloudinary.com/halfmoon-ui/image/upload/v1599770364/halfmoon-og-image-1.1.0_uofgby.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta property="fb:app_id" content="2560228000973437">
+
+
+    <!-- Fav and Title -->
+    <link rel="icon" href="/static/halfmoon/img/halfmoon-fav-alt.png">
+    <title>Page sections demo - Halfmoon</title>
+
+    <!-- Halfmoon -->
+    <link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon.min.css" rel="stylesheet" />
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <!-- Roboto font (Used when Apple system fonts are not available) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Documentation styles -->
+    <link href="/static/site/css/documentation-styles-4.css" rel="stylesheet">
+</head>
+
+<body class="dark-mode with-custom-webkit-scrollbars with-custom-css-scrollbars" data-dm-shortcut-enabled="true" data-sidebar-shortcut-enabled="true">
+
+    <!-- Page wrapper start -->
+    <div id="page-wrapper" class="page-wrapper with-navbar with-sidebar with-navbar-fixed-bottom" data-sidebar-type="overlayed-sm-and-down">
+
+        <!-- Sticky alerts -->
+        <div class="sticky-alerts"></div>
+
+        <!-- Navbar start -->
+        <nav class="navbar">
+            <div class="navbar-content">
+                <button id="toggle-sidebar-btn" class="btn btn-action" type="button" onclick="halfmoon.toggleSidebar()">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+            <a href="#" class="navbar-brand ml-10 ml-sm-20">
+
+                <span class="d-none d-sm-flex">Adam's Project</span>
+            </a>
+            <div class="navbar-content ml-auto">
+                <button class="btn btn-action mr-5" type="button" onclick="halfmoon.toggleDarkMode()">
+                    <i class="fa fa-moon-o" aria-hidden="true"></i>
+                    <span class="sr-only">Toggle dark mode</span>
+                </button>
+                <a href="/Pr/login" class="bg-red-500 py-2 px-4 text-white rounded-lg" role="button">Disconnect</a>
+            </div>
+        </nav>
+        <!-- Navbar end -->
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" onclick="halfmoon.toggleSidebar()"></div>
+
+        <!-- Sidebar start -->
+        <div class="sidebar">
+            <div class="sidebar-menu">
+
+                <h5 class="sidebar-title">@ViewBag.user</h5>
+                <div class="sidebar-divider"></div>
+                <a href="/Pr/listStudents" class="sidebar-link sidebar-link-with-icon">
+                    <span class="sidebar-icon">
+                        <i class="fa fa-folder-open-o" aria-hidden="true"></i>
+                    </span>
+                    Manage Students
+                </a>
+                <a href="/Pr/reservation" class="sidebar-link sidebar-link-with-icon">
+                    <span class="sidebar-icon">
+                        <i class="fa fa-table" aria-hidden="true"></i>
+                    </span>
+                    Reservations Room
+                </a>
+
+                <a href="#" class="sidebar-link sidebar-link-with-icon">
+                    <span class="sidebar-icon">
+                        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+                    </span>
+                    Inbox
+                </a>
+            </div>
+        </div>
+        <!-- Sidebar end -->
+        <!-- Content wrapper start -->
+        <div class="content-wrapper">
+            <div class="container-fluid">
+                <div class="row row-eq-spacing-lg">
+                    <div class="col-lg-9">
+                        <div class="content">
+                            <h1 class="content-title">
+                                Welcome
+                            </h1>
+                            <div class="fake-content"></div>
+                            <div class="fake-content"></div>
+                        </div>
+                        <div class="card">
+                            <h2 class="card-title">
+                                Table Reservation
+                            </h2>
+                            <div class="fake-content flex justify-center items-center ">
+
+
+                                <div class="overflow-x-auto relative">
+                                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                                        <thead class="text-xs text-gray-900 uppercase dark:text-gray-400">
+
+                                            <tr>
+                                                <th scope="col" class="py-3 px-6">
+                                                    Jours
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    1st session
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    2nd session
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    3rd session
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    4th session
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    5th session
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    6th session
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    7th session
+                                                </th>
+                                                <th scope="col" class="py-3 px-6">
+                                                    8th session
+                                                </th>
+                                            </tr>
+                                        </thead>
+
+
+
+
+                                        <tbody>
+
+                                            @* ROWS JOURS L M MEr J V *@
+
+                                            @for (int j = 0; j < 5; j++)
+                                            {
+                                                <tr class="text-lg font-bold divide-y text-white dark:bg-gray-800">
+
+                                                    @if (j == 0)
+                                                    {
+                                                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            Monday
+                                                        </th>
+                                                        foreach (WebApplication1.plg_horaire elm in Model)
+                                                        {
+                                                            if (@elm.L == "n")
+                                                            {
+                                                                <td class="bg-gray-900 border-solid border-gray-100">
+                                                                </td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td class="bg-green-400 text-center">
+                                                                    Reserved By :
+                                                                    @elm.L.Substring(1)
+                                                                </td>
+                                                            }
+
+
+                                                        }
+                                                    }
+                                                    else if (j == 1)
+                                                    {
+                                                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            tuesday
+                                                        </th>
+                                                        foreach (WebApplication1.plg_horaire elm in Model)
+                                                        {
+                                                            if (@elm.M == "n")
+                                                            {
+                                                                <td class="bg-gray-900 border-solid border-gray-100">
+                                                                </td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td class="bg-green-400 text-center">
+                                                                    Reserved By :
+                                                                    @elm.M.Substring(1)
+                                                                </td>
+                                                            }
+
+                                                        }
+                                                    }
+                                                    else if (j == 2)
+                                                    {
+                                                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            Wednesday
+                                                        </th>
+                                                        foreach (WebApplication1.plg_horaire elm in Model)
+                                                        {
+                                                            if (@elm.Mer == "n")
+                                                            {
+                                                                <td class="bg-gray-900 border-solid border-gray-100">
+                                                                </td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td class="bg-green-400 text-center">
+                                                                    Reserved By :
+                                                                    @elm.Mer.Substring(1)
+                                                                </td>
+                                                            }
+
+                                                        }
+                                                    }
+                                                    else if (j == 3)
+                                                    {
+                                                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            Thursday
+                                                        </th>
+                                                        foreach (WebApplication1.plg_horaire elm in Model)
+                                                        {
+                                                            if (@elm.J == "n")
+                                                            {
+                                                                <td class="bg-gray-900 border-solid border-gray-100">
+                                                                </td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td class="bg-green-400 text-center">
+                                                                    Reserved By :
+                                                                    @elm.J.Substring(1)
+                                                                </td>
+                                                            }
+
+                                                        }
+                                                    }
+                                                    else if (j == 4)
+                                                    {
+                                                        <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                                            Friday
+                                                        </th>
+                                                        foreach (WebApplication1.plg_horaire elm in Model)
+                                                        {
+                                                            if (@elm.V == "n")
+                                                            {
+                                                                <td class="bg-gray-900 border-solid border-gray-100">
+                                                                </td>
+                                                            }
+                                                            else
+                                                            {
+                                                                <td class="bg-green-400 text-center">
+                                                                    Reserved By :
+                                                                    @elm.V.Substring(1)
+                                                                </td>
+                                                            }
+
+                                                        }
+                                                    }
+
+
+
+                                                </tr>
+                                            }
+
+
+
+
+
+                                        </tbody>
+                                    </table>
+
+
+                                </div>
+
+
+
+
+
+
+
+                            </div>
+
+
+                            <div class="fake-content flex items-center m-10">
+                                <div class="w-7 h-5 bg-green-400"></div>
+                                <p class="font-medium ml-5">Reserved</p>
+                            </div>
+
+                            <div class="fake-content flex items-center m-10">
+                                <div class="w-7 h-5 bg-gray-900 divide-y divide-x"></div>
+                                <p class="font-medium ml-5">Available</p>
+                            </div>
+
+
+
+
+                            <form action="/Pr/plagehoraire" method="POST">
+                                <h2 class="card-title py-10">
+                                    Add Reservation
+                                </h2>
+
+                                <h5 class="dark:text-gray-100 font-medium">
+                                    Session
+                                </h5>
+
+                                <select name="session" class="w-full py-2 px-4 bg-gray-100 dark:text-white dark:bg-gray-900">
+                                    @for (int i = 1; i < 9; i++)
+                                    {
+                                        <option class="bg-gray-100 dark:text-white dark:bg-gray-900 divide-y">
+                                            Session @i
+                                        </option>
+                                    }
+                                </select>
+
+                                <h5 class="dark:text-gray-100  mt-10 font-medium">
+                                    Day
+                                </h5>
+
+                                <select name="day" class="w-full py-2 px-4 bg-gray-100 dark:text-white dark:bg-gray-900">
+
+                                    <option class="bg-gray-100 dark:text-white dark:bg-gray-900 divide-y">
+                                        Monday
+                                    </option>
+                                    <option class="bg-gray-100 dark:text-white dark:bg-gray-900 divide-y">
+                                        Tuesday
+                                    </option>
+                                    <option class="bg-gray-100 dark:text-white dark:bg-gray-900 divide-y">
+                                        Wednesday
+                                    </option>
+                                    <option class="bg-gray-100 dark:text-white dark:bg-gray-900 divide-y">
+                                        Thursday
+                                    </option>
+                                    <option class="bg-gray-100 dark:text-white dark:bg-gray-900 divide-y">
+                                        Friday
+                                    </option>
+
+
+                                </select>
+
+                                <p class="text-red-500">
+                                    @ViewBag.msg
+                                </p>
+
+                                <button type="submit" class="mb-2 w-full mt-20 inline-block px-6 py-2.5 bg-blue-600 text-lg text-white font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                                    Add a reservation
+                                </button>
+
+
+
+                                <button type="button"
+                                       class="mb-2 w-full mt-20 inline-block px-6 py-2.5 bg-blue-600 text-lg text-white font-medium text-xs leading-normal uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">
+                                    <a href="/Pr/Delplagehoraire">Do you want to Delete A reservation ?</a>
+                                    
+                                </button>
+
+                            </form>
+
+
+                        </div>
+                        <div class="content">
+                            <div class="fake-content">
+                                
+                            </div>
+                            <div class="fake-content w-150"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 d-none d-lg-block">
+                        <div class="content">
+                            <h2 class="content-title font-size-20">
+                                
+                            </h2>
+                            <div class="fake-content">
+                                
+                            </div>
+                            <div class="fake-content"></div>
+                            <div class="fake-content"></div>
+                            <div class="fake-content"></div>
+                            <div class="fake-content"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!-- Page wrapper end -->
+    <!-- Halfmoon JS -->
+    <script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
+
+</body>
+
+</html>
